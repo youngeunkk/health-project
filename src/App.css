@@ -58,3 +58,40 @@ body {
   cursor: pointer;
   background-color: rgb(29, 29, 29);
 }
+
+
+.homeMode {
+  width: 600px;
+  height: 40px;
+  line-height: 30px;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.homeMode ul {
+  list-style: none;
+}
+
+.homeMode li {
+  font-size: 18px;
+  margin-left: 10px;
+  float: left;
+}
+
+.chart {
+  margin-top: 150px;
+}
+
+.chart ul {
+  list-style: none;
+}
+
+.chart li {
+  margin-left: 4.4%;
+  float: left;
+}
+
+.chart h4 {
+  text-align: center;
+}
