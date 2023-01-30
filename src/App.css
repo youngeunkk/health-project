@@ -92,6 +92,7 @@ body {
   float: left;
 }
 
-.chart h4 {
+.chart h4 { 
   text-align: center;
+  margin-left: 25px;
 }

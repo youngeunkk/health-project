@@ -2,20 +2,27 @@ import './App.css';
 import { useState } from 'react';
 import Freeweight from './Mode/freeweight';
 import Home from './Mode/home';
-
+import NewPR from './Mode/NewPR';
 
 function App() {
 
   let [mode, setMode] = useState('Freeweight');
   let content = null;
 
+  let subContent = null;
+
   let [squat, setSquat] = useState();
   let [benchpress, setBenchpress] = useState();
   let [deadlift, setDeadlift] = useState();
 
-  const onChangeMode = () => {
+  const onChangeHomeMode = () => {
     setMode('Home');
   }
+
+  const onChangeNewPRMode = () => {
+    setMode('NewPR');
+  }
+
 
   const onCreate = (e) => {
 
@@ -26,7 +33,7 @@ function App() {
       setSquat(Number(e.target.squat.value));
       setBenchpress(Number(e.target.benchpress.value));
       setDeadlift(Number(e.target.deadlift.value));
-      onChangeMode();
+      onChangeHomeMode();
       e.preventDefault();
     }
   }
@@ -34,13 +41,16 @@ function App() {
   if (mode === 'Freeweight') {
     content = <Freeweight onCreate={onCreate} />
   } else if (mode === 'Home') {
-    content = <Home squat={squat} benchpress={benchpress} deadlift={deadlift} />
+    content = <Home squat={squat} benchpress={benchpress} deadlift={deadlift}/>
+    subContent= <button onClick={onChangeNewPRMode}>새로운 중량 설정하러가기!</button>
+  } else if (mode === 'NewPR') {
+    content = <NewPR onCreate={onCreate}/>
   }
-
 
   return (
     <div className="App">
       {content}
+      {subContent}
     </div>
   );
 }
