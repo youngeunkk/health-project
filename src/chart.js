@@ -1,9 +1,8 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { squatData, benchpressData, deadliftData } from './store';
 
 
 const squatChart = (
-    <LineChart width={480} height={360} data={squatData}>
+    <LineChart width={480} height={360} data=''>
       <Line type="monotone" dataKey="uv" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />
@@ -12,7 +11,7 @@ const squatChart = (
 );
   
   const benchpressChart = (
-    <LineChart width={480} height={360} data={benchpressData}>
+    <LineChart width={480} height={360} data=''>
       <Line type="monotone" dataKey="uv" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />
@@ -21,7 +20,7 @@ const squatChart = (
 );
   
   const deadliftChart = (
-    <LineChart width={480} height={360} data={deadliftData}>
+    <LineChart width={480} height={360} data=''>
       <Line type="monotone" dataKey="uv" stroke="#8884d8" />
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />

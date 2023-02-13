@@ -1,22 +1,17 @@
-const squatData = [
-    { date: '23.01.25', uv: 60},
-    { date: '23.02.08', uv: 80},
-    { date: '23.02.22', uv: 120},
-    { date: '23.03.08', uv: 140 },
-];
+import { configureStore } from "@reduxjs/toolkit";
+import benchSlice from "./Slice/benchSlice";
+import deadliftSlice from "./Slice/deadliftSlice";
+import squatSlice from "./Slice/squatSlice";
 
-const benchpressData = [
-    { date: '23.01.25', uv: 60},
-    { date: '23.02.08', uv: 80},
-    { date: '23.02.22', uv: 100},
-    { date: '23.03.08', uv: 120 },
-];
 
-const deadliftData = [
-    { date: '23.01.25', uv: 100},
-    { date: '23.02.08', uv: 120},
-    { date: '23.02.22', uv: 140},
-    { date: '23.03.08', uv: 160 },
-];
 
-export { squatData, benchpressData, deadliftData };
+
+const store = configureStore({
+    reducer: { 
+        squatData:squatSlice.reducer,
+        benchData:benchSlice.reducer,
+        deadliftData:deadliftSlice.reducer
+    }
+}); 
+
+export default store;
