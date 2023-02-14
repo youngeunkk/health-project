@@ -1,9 +1,9 @@
 import './App.css';
 import { useState } from 'react';
-import Freeweight from './Mode/freeweight';
-import Home from './Mode/home';
+import Freeweight from './Mode/Freeweight';
+import Home from './Mode/Home';
 import NewPR from './Mode/NewPR';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addSquat } from './Slice/squatSlice';
 import { addBench } from './Slice/benchSlice';
 import { addDeadlift } from './Slice/deadliftSlice';
@@ -14,19 +14,7 @@ function App() {
 
   const dispatch = useDispatch();
 
-  const squatData = useSelector(state=>{
-    return state.squatData;
-  });
-  const benchData = useSelector(state=>{
-    return state.benchData;
-  });
-  const deadliftData = useSelector(state=>{
-    return state.deadliftData;
-  })
 
-  console.log(squatData)
-      console.log(benchData)
-      console.log(deadliftData)
 
   let [mode, setMode] = useState('Freeweight');
   let content = null;
@@ -60,8 +48,8 @@ function App() {
   if (mode === 'Freeweight') {
     content = <Freeweight onCreate={onCreate} />
   } else if (mode === 'Home') {
-    subContent = <button type="button" id="NewPR" onClick={onChangeNewPRMode}>새로운 중량 설정하러가기!</button>
-    content = <Home squatData={squatData} benchData={benchData} deadliftData={deadliftData}/>
+    
+    content = <Home onChangeNewPRMode={onChangeNewPRMode}/>;
     
   } else if (mode === 'NewPR') {
     content = <NewPR onCreate={onCreate}/>
@@ -70,8 +58,9 @@ function App() {
   return (
     <div className="App">
       {content}
-      {subContent}
-      
+      <div className="subContent">
+        {subContent}
+      </div>
     </div>
   );
 }

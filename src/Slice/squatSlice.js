@@ -4,7 +4,6 @@ const squatSlice = createSlice({
     initialState : [],
     reducers:{
         addSquat:(state,action)=>{
-
             const data = {
                 date: new Date().toLocaleDateString(),
                 uv : action.payload
