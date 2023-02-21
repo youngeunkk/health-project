@@ -2,6 +2,29 @@ import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
 import { useSelector } from 'react-redux';
 
 
+function Read() {
+  
+  const recode = useSelector(state => {
+    return state.recode;
+  })
+
+  return (
+    <div className="read">
+      <h2>운동일지🏃‍♀️</h2>
+      {
+        recode.map(function(e,i){
+          return (
+            <div className="list" key={i}>
+              <h4>{recode[i].date}</h4>
+              <p>{recode[i].body}</p>
+            </div>
+          )
+        })
+      }
+  </div>
+  )
+}
+
 function Home(props) {
 
   const squatData = useSelector(state => {
@@ -13,6 +36,7 @@ function Home(props) {
   const deadliftData = useSelector(state => {
     return state.deadliftData;
   });
+
 
   const newSquat = squatData[squatData.length - 1];
   const newBench = benchData[benchData.length - 1];
@@ -59,6 +83,7 @@ function Home(props) {
         </ul>
       </div>
       <div>
+       <button type="button" id="Recode" onClick={props.onChangeRecodeMode}>운동 일지 작성하기 💪</button>
        <button type="button" id="NewPR" onClick={props.onChangeNewPRMode}>새 중량 갱신하기 🏋️‍♀️🏋️‍♂️</button>
       </div>
       <div className="chart">
@@ -68,6 +93,7 @@ function Home(props) {
           <li>{deadliftChart}<h4>deadlift</h4></li>
         </ul>
       </div>
+      <Read/>
     </div>
   )
 }

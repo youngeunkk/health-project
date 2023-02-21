@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Freeweight from './Mode/Freeweight';
 import Home from './Mode/Home';
 import NewPR from './Mode/NewPR';
+import Recode from './Mode/Recode';
 import { useDispatch } from 'react-redux';
 import { addSquat } from './Slice/squatSlice';
 import { addBench } from './Slice/benchSlice';
@@ -10,15 +11,13 @@ import { addDeadlift } from './Slice/deadliftSlice';
 
 
 
+
 function App() {
 
   const dispatch = useDispatch();
 
-
-
   let [mode, setMode] = useState('Freeweight');
   let content = null;
-  let subContent = null;
 
   const onChangeHomeMode = () => {
     setMode('Home');
@@ -26,6 +25,10 @@ function App() {
 
   const onChangeNewPRMode = () => {
     setMode('NewPR');
+  }
+
+  const onChangeRecodeMode = () => {
+    setMode('Recode');
   }
 
 
@@ -48,18 +51,17 @@ function App() {
   if (mode === 'Freeweight') {
     content = <Freeweight onCreate={onCreate} />
   } else if (mode === 'Home') {
-    
-    content = <Home onChangeNewPRMode={onChangeNewPRMode}/>;
-    
+    content = <Home onChangeNewPRMode={onChangeNewPRMode} onChangeRecodeMode={onChangeRecodeMode}/>;
   } else if (mode === 'NewPR') {
     content = <NewPR onCreate={onCreate}/>
+  } else if (mode === 'Recode') {
+    content = <Recode onChangeHomeMode={onChangeHomeMode}/>
   }
 
   return (
     <div className="App">
       {content}
       <div className="subContent">
-        {subContent}
       </div>
     </div>
   );
