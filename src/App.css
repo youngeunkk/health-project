@@ -168,3 +168,33 @@ textarea::placeholder {
 .read h2 {
   text-align: center;
 }
+
+.list {
+  width: 500px;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 2px solid black;
+}
+
+.list h4, p {
+  margin-left: 5px;
+}
+
+#delete {
+  margin-bottom: 5px;
+  margin-right: 10px;
+  float: right;
+  background-color: black;
+  border: black;
+  color: white;
+  font-size: 15px;
+  width: 60px;
+}
+
+#delete:hover {
+  cursor: pointer;
+  color:black;
+  background-color:violet;
+  border: violet;
+}

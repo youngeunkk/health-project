@@ -1,13 +1,10 @@
 import { useRef, useState } from "react";
-import { useDispatch , useSelector} from "react-redux";
+import { useDispatch } from "react-redux";
 import { onCreateRecode } from "../Slice/recodeSlice";
 
 
 function Recode(props) {
 
-    const recode = useSelector(state => {
-        return state.recode;
-    })
 
     const dataId = useRef(Number(0))
 
@@ -17,21 +14,25 @@ function Recode(props) {
 
     const dispatch = useDispatch();
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        const id = {id : dataId.current};
-        const finalResult = Object.assign(id, date, body);
-        dispatch(onCreateRecode(finalResult));
-        console.log(recode);
-        alert('글이 작성되었습니다');
-        props.onChangeHomeMode();
+    const onCreate = (e) => {
+        if (e.target.date.value === null || e.target.body.value === '') {
+            alert('날짜 선택과 글을 작성해주세요');
+            e.preventDefault();        
+        } else {
+            e.preventDefault();
+            const id = {id : dataId.current};
+            const finalResult = Object.assign(id, date, body);
+            dispatch(onCreateRecode(finalResult));
+            alert('글이 작성되었습니다');
+            props.onChangeHomeMode();
+        }
     };
 
     dataId.current += 1;
 
     return (
         <div className="recodeArea">
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onCreate}>
                 <p><input type="date" name="date" onChange={(e)=>{
                     let date2 = {...date};
                     date2 = {date : e.target.value};

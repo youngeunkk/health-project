@@ -1,31 +1,12 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { deleteRecode } from '../Slice/recodeSlice';
 
+function Home(props) {
 
-function Read() {
-  
   const recode = useSelector(state => {
     return state.recode;
   })
-
-  return (
-    <div className="read">
-      <h2>운동일지🏃‍♀️</h2>
-      {
-        recode.map(function(e,i){
-          return (
-            <div className="list" key={i}>
-              <h4>{recode[i].date}</h4>
-              <p>{recode[i].body}</p>
-            </div>
-          )
-        })
-      }
-  </div>
-  )
-}
-
-function Home(props) {
 
   const squatData = useSelector(state => {
     return state.squatData;
@@ -36,6 +17,8 @@ function Home(props) {
   const deadliftData = useSelector(state => {
     return state.deadliftData;
   });
+
+  let dispatch = useDispatch();
 
 
   const newSquat = squatData[squatData.length - 1];
@@ -93,7 +76,22 @@ function Home(props) {
           <li>{deadliftChart}<h4>deadlift</h4></li>
         </ul>
       </div>
-      <Read/>
+      <div className="read">
+        <h2>운동일지🏃‍♀️</h2>
+        {
+          recode.map(function(e,i){
+            return (
+              <div className="list" key={i}>
+                <h4>{recode[i].date}</h4>
+                <p>{recode[i].body}</p>
+                <button id="delete" onClick={()=>{
+                  dispatch(deleteRecode(i))
+                }}>삭제</button>
+              </div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 }

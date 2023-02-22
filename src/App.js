@@ -56,7 +56,7 @@ function App() {
     content = <NewPR onCreate={onCreate}/>
   } else if (mode === 'Recode') {
     content = <Recode onChangeHomeMode={onChangeHomeMode}/>
-  }
+  } 
 
   return (
     <div className="App">
