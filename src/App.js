@@ -9,9 +9,6 @@ import { addSquat } from './Slice/squatSlice';
 import { addBench } from './Slice/benchSlice';
 import { addDeadlift } from './Slice/deadliftSlice';
 
-
-
-
 function App() {
 
   const dispatch = useDispatch();
@@ -31,6 +28,9 @@ function App() {
     setMode('Recode');
   }
 
+  const onChangeUpdateMode = () => {
+    setMode('Update');
+  }
 
   const onCreate = (e) => {
 
@@ -51,18 +51,20 @@ function App() {
   if (mode === 'Freeweight') {
     content = <Freeweight onCreate={onCreate} />
   } else if (mode === 'Home') {
-    content = <Home onChangeNewPRMode={onChangeNewPRMode} onChangeRecodeMode={onChangeRecodeMode}/>;
+    content = <Home 
+              onChangeNewPRMode={onChangeNewPRMode} 
+              onChangeRecodeMode={onChangeRecodeMode}
+              onChangeUpdateMode={onChangeUpdateMode}/>;
   } else if (mode === 'NewPR') {
     content = <NewPR onCreate={onCreate}/>
   } else if (mode === 'Recode') {
     content = <Recode onChangeHomeMode={onChangeHomeMode}/>
-  } 
+  }
+
 
   return (
     <div className="App">
       {content}
-      <div className="subContent">
-      </div>
     </div>
   );
 }

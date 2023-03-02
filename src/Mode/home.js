@@ -84,9 +84,12 @@ function Home(props) {
               <div className="list" key={i}>
                 <h4>{recode[i].date}</h4>
                 <p>{recode[i].body}</p>
-                <button id="delete" onClick={()=>{
-                  dispatch(deleteRecode(i))
-                }}>삭제</button>
+                <div className="deleteArea">
+                  <button id="delete" onClick={()=>{
+                    dispatch(deleteRecode(i))
+                  }}>삭제</button>
+                  <button id="delete" onClick={props.onChangeUpdateMode}>수정</button>
+                </div>
               </div>
             )
           })

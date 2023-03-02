@@ -9,9 +9,9 @@ const recodeSlice = createSlice({
         },
         deleteRecode:(state,action)=>{
             state.splice(action.payload, 1);
-        }
+        },
     }
 });
 
 export default recodeSlice;
-export const { onCreateRecode, deleteRecode } = recodeSlice.actions;
+export const { onCreateRecode, deleteRecode, onUpdateRecode } = recodeSlice.actions;
