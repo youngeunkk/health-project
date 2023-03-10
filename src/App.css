@@ -171,7 +171,7 @@ textarea::placeholder {
   text-align: center;
 }
 
-.list {
+.card {
   width: 360px;
   height: 360px;
   float: left;
@@ -182,7 +182,7 @@ textarea::placeholder {
   white-space: pre-wrap;
 }
 
-.list h4, p {
+.card h4, p {
   margin-left: 5px;
 }
 
@@ -208,3 +208,22 @@ textarea::placeholder {
   background-color:violet;
   border: violet;
 }
+
+#update {
+  margin-bottom: 5px;
+  margin-right: 10px;
+  float: right;
+  background-color: black;
+  border: black;
+  color: white;
+  font-size: 15px;
+  width: 60px;
+}
+
+#update:hover {
+  cursor: pointer;
+  color:black;
+  background-color:violet;
+  border: violet;
+}
+

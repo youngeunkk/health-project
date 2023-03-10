@@ -1,12 +1,9 @@
+import { useSelector } from 'react-redux';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
-import { useDispatch, useSelector } from 'react-redux';
-import { deleteRecode } from '../Slice/recodeSlice';
+import Card from './Card';
 
-function Home(props) {
+function MyPage(props) {
 
-  const recode = useSelector(state => {
-    return state.recode;
-  })
 
   const squatData = useSelector(state => {
     return state.squatData;
@@ -17,15 +14,6 @@ function Home(props) {
   const deadliftData = useSelector(state => {
     return state.deadliftData;
   });
-
-  let dispatch = useDispatch();
-
-
-  const newSquat = squatData[squatData.length - 1];
-  const newBench = benchData[benchData.length - 1];
-  const newDead = deadliftData[deadliftData.length - 1];
-
-  const sum = newSquat.uv + newBench.uv + newDead.uv;
 
   const squatChart = (
     <LineChart width={480} height={360} data={squatData}>
@@ -54,6 +42,13 @@ function Home(props) {
     </LineChart>
   );
 
+  const newSquat = squatData[squatData.length - 1];
+  const newBench = benchData[benchData.length - 1];
+  const newDead = deadliftData[deadliftData.length - 1];
+
+  const sum = newSquat.uv + newBench.uv + newDead.uv;
+
+
   return (
     <div className="home">
       <div className="homeMode">
@@ -76,27 +71,9 @@ function Home(props) {
           <li>{deadliftChart}<h4>deadlift</h4></li>
         </ul>
       </div>
-      <div className="read">
-        <h2>운동일지🏃‍♀️</h2>
-        {
-          recode.map(function(e,i){
-            return (
-              <div className="list" key={i}>
-                <h4>{recode[i].date}</h4>
-                <p>{recode[i].body}</p>
-                <div className="deleteArea">
-                  <button id="delete" onClick={()=>{
-                    dispatch(deleteRecode(i))
-                  }}>삭제</button>
-                  <button id="delete" onClick={props.onChangeUpdateMode}>수정</button>
-                </div>
-              </div>
-            )
-          })
-        }
-      </div>
+      <Card />
     </div>
   )
 }
 
-export default Home;
+export default MyPage;

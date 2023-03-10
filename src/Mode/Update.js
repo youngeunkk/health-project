@@ -1,32 +1,35 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { CreateRecode } from "../Slice/recodeSlice";
+import { useParams } from "react-router-dom";
+import { UpdateRecode } from "../Slice/recodeSlice";
 
 
-function Recode(props) {
 
-    const recode = useSelector(state => {
+
+function Update(props) {
+
+    const recode = useSelector(state=>{
         return state.recode;
     })
+    const {id} = useParams();
 
-    const [date, setDate] = useState('');
-    const [body, setBody] = useState('');
+    const [date, setDate] = useState(recode[id-1].date);
+    const [body, setBody] = useState(recode[id-1].body);
 
     const dispatch = useDispatch();
 
-
-    const onCreate = (e) => {
+    const onUpdate = (e) => {
         if (e.target.date.value === '' || e.target.body.value === '') {
             alert('날짜 선택과 글을 작성해주세요');
-            e.preventDefault();
+            e.preventDefault();        
         } else {
             e.preventDefault();
             let data = {
-                id: recode.length + 1,
+                id : Number(id),
                 date: date,
                 body: body
             }
-            dispatch(CreateRecode(data));
+            dispatch(UpdateRecode(data));
             alert('글이 작성되었습니다');
             props.onChangeMyPageMode();
         }
@@ -34,20 +37,17 @@ function Recode(props) {
 
     return (
         <div className="recodeArea">
-            <form onSubmit={onCreate}>
-                <p><input type="date" name="date" id="date" onChange={(e) => {
+            <form onSubmit={onUpdate}>
+                <p><input type="date" name="date" id="date" value={date} onChange={(e)=>{
                     setDate(e.target.value)
                 }}></input></p>
-                <p><textarea name="body" id="textarea" cols="80" row="40" maxLength="300" placeholder="운동일지를 적어주세용" onChange={(e) => {
+                <p><textarea name="body" id="textarea" value={body} cols="80" row="40" maxLength="300" placeholder="운동일지를 적어주세용" onChange={(e)=>{
                     setBody(e.target.value)
                 }}></textarea></p>
                 <button type="submit">저장</button>
             </form>
-            <div>
-
-            </div>
         </div>
     )
 }
 
-export default Recode;
+export default Update;

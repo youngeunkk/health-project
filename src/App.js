@@ -1,35 +1,30 @@
 import './App.css';
-import { useState } from 'react';
 import Freeweight from './Mode/Freeweight';
-import Home from './Mode/Home';
+import MyPage from './Mode/MyPage';
 import NewPR from './Mode/NewPR';
 import Recode from './Mode/Recode';
+import Update from './Mode/Update';
 import { useDispatch } from 'react-redux';
 import { addSquat } from './Slice/squatSlice';
 import { addBench } from './Slice/benchSlice';
 import { addDeadlift } from './Slice/deadliftSlice';
+import { Routes, Route, useNavigate} from 'react-router-dom';
 
 function App() {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  let [mode, setMode] = useState('Freeweight');
-  let content = null;
-
-  const onChangeHomeMode = () => {
-    setMode('Home');
+  const onChangeMyPageMode = () => {
+    navigate('/mypage');
   }
 
   const onChangeNewPRMode = () => {
-    setMode('NewPR');
+    navigate('/NewPR')
   }
 
   const onChangeRecodeMode = () => {
-    setMode('Recode');
-  }
-
-  const onChangeUpdateMode = () => {
-    setMode('Update');
+    navigate('/recode');
   }
 
   const onCreate = (e) => {
@@ -41,30 +36,24 @@ function App() {
       dispatch(addSquat(Number(e.target.squat.value)));
       dispatch(addBench(Number(e.target.benchpress.value)));
       dispatch(addDeadlift(Number(e.target.deadlift.value)));   
-
       alert('중량을 갱신했습니다!')
-      onChangeHomeMode();
+      onChangeMyPageMode();
       e.preventDefault();
     }
   }
 
-  if (mode === 'Freeweight') {
-    content = <Freeweight onCreate={onCreate} />
-  } else if (mode === 'Home') {
-    content = <Home 
-              onChangeNewPRMode={onChangeNewPRMode} 
-              onChangeRecodeMode={onChangeRecodeMode}
-              onChangeUpdateMode={onChangeUpdateMode}/>;
-  } else if (mode === 'NewPR') {
-    content = <NewPR onCreate={onCreate}/>
-  } else if (mode === 'Recode') {
-    content = <Recode onChangeHomeMode={onChangeHomeMode}/>
-  }
-
-
   return (
     <div className="App">
-      {content}
+      <Routes>
+        <Route path="/mypage" element={
+          <MyPage onChangeNewPRMode={onChangeNewPRMode} 
+                  onChangeRecodeMode={onChangeRecodeMode}
+                />}/>
+        <Route path="/" element={<Freeweight onCreate={onCreate}/>}/>
+        <Route path="/NewPR" element={<NewPR onCreate={onCreate}/>}/>
+        <Route path="/recode" element={<Recode onChangeMyPageMode={onChangeMyPageMode}/>}/>
+        <Route path="/update/:id" element={<Update onChangeMyPageMode={onChangeMyPageMode}/>}/>
+      </Routes>
     </div>
   );
 }
