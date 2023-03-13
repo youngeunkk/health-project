@@ -41,7 +41,7 @@ function Recode(props) {
                 <p><textarea name="body" id="textarea" cols="80" row="40" maxLength="300" placeholder="운동일지를 적어주세용" onChange={(e) => {
                     setBody(e.target.value)
                 }}></textarea></p>
-                <button type="submit">저장</button>
+                <button id="save" type="submit">저장</button>
             </form>
             <div>
 

@@ -3,7 +3,7 @@ function NewPR(props) {
     return (
         <div className="freeweightBox">
           <h2>3대 중량을 입력해주세요!</h2>
-          <form onSubmit={props.onCreate}>
+          <form onSubmit={props.onCreatePR}>
             <ul>
               <li>스쿼트 <input type="text" id="squat" name="squat" maxLength="3" size="4"
               ></input> kg</li>

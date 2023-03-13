@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 const deadliftSlice = createSlice({
     name:'deadliftSlice',
-    initialState : [],
+    initialState : [{
+        date : '',
+        uv : 0
+    }],
     reducers:{
         addDeadlift:(state,action)=>{
             const data = {

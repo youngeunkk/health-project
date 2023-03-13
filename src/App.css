@@ -139,7 +139,16 @@ body {
   border: hotpink;
 }
 
+#date {
+  margin-top: 1%;
+  width: 200px;
+  text-align: center;
+  font-size: 18px;
+  border: 2px solid black;
+}
+
 textarea {
+  margin-top: 2.5%;
   width: 20%;
   height: 400px;
   overflow: hidden;
@@ -227,3 +236,31 @@ textarea::placeholder {
   border: violet;
 }
 
+#save {
+  background-color: black;
+  border: black;
+  color: white;
+  font-size: 18px;
+  width: 70px;
+  height: 70px;
+  border-radius: 100%;
+}
+
+#save:hover {
+  cursor: pointer;
+  color:black;
+  background-color: lightgreen;
+  border : lightgreen;
+}
+
+.home {
+  text-align: center;
+}
+
+
+.images img {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 750px;
+  height: 750px;
+}

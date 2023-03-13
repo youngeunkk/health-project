@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 const squatSlice = createSlice({
     name:'squatSlice',
-    initialState : [],
+    initialState : [{
+        date : '',
+        uv : 0
+    }],
     reducers:{
         addSquat:(state,action)=>{
             const data = {

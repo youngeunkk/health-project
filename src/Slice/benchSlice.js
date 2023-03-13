@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 const benchSlice = createSlice({
     name:'benchSlice',
-    initialState : [],
+    initialState : [{
+        date : '',
+        uv : 0
+    }],
     reducers:{
         addBench:(state,action)=>{
             const data = {
