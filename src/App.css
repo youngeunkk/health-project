@@ -7,7 +7,8 @@
 
 body {
   font-family:  'IBMPlexSansKR-Regular';
-  background-color: whitesmoke;
+  background-color: rgba(0, 0, 0, 0.888);
+  color: white;
 }
 
 .App {
@@ -20,9 +21,10 @@ body {
 }
 
 .freeweightBox {
-  background-color: rgb(110, 214, 255);
+  background-color: darkolivegreen;
   width: 360px;
   height: 360px;
+  font-weight: bold;
   margin: 0 auto;
   text-align: center;
   border-radius: 10%;
@@ -69,7 +71,7 @@ body {
   line-height: 30px;
   margin: 0 auto;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid rgb(192, 192, 192);
 }
 
 .homeMode ul {
@@ -187,7 +189,7 @@ textarea::placeholder {
   margin-top: 100px;
   margin-left: 10px;
   margin-right: 10px;
-  border: 2px solid black;
+  border: 2px solid white;
   white-space: pre-wrap;
 }
 
@@ -204,8 +206,8 @@ textarea::placeholder {
   margin-bottom: 5px;
   margin-right: 10px;
   float: right;
-  background-color: black;
-  border: black;
+  background-color: darkkhaki;
+  border: darkkhaki;
   color: white;
   font-size: 15px;
   width: 60px;
@@ -222,8 +224,8 @@ textarea::placeholder {
   margin-bottom: 5px;
   margin-right: 10px;
   float: right;
-  background-color: black;
-  border: black;
+  background-color: darkkhaki;
+  border: darkkhaki;
   color: white;
   font-size: 15px;
   width: 60px;
@@ -261,6 +263,52 @@ textarea::placeholder {
 .images img {
   margin-left: 20px;
   margin-top: 20px;
-  width: 750px;
-  height: 750px;
+  width: 800px;
+  height: 800px;
+}
+
+footer {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.footerparent { 
+  background-color: rgb(1, 61, 1);
+  height: 30px;
+  padding: 0;
+}
+
+#mypagebtn {
+  background-color: lightgreen;
+  border: lightgreen;
+  width: 80px;
+  height: 40px;
+  margin-right: 5px;
+}
+
+#mypagebtn:hover {
+  cursor: pointer;
+  color:black;
+  background-color: rgba(144, 238, 144, 0.651);
+  border : rgba(144, 238, 144, 0.651);
+}
+
+#loginbtn {
+  background-color: aquamarine;
+  border: aquamarine;
+  width: 80px;
+  height: 40px;
+}
+
+#loginbtn:hover {
+  cursor: pointer;
+  color:black;
+  background-color: rgba(127, 255, 212, 0.623);
+  border: rgba(127, 255, 212, 0.623);
+}
+
+.btnarea {
+  float: right;
+  margin-right: 2%;
 }
