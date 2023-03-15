@@ -33,7 +33,7 @@ function Recode(props) {
     };
 
     return (
-        <div className="recodeArea">
+        <div className="recodearea">
             <form onSubmit={onCreate}>
                 <p><input type="date" name="date" id="date" onChange={(e) => {
                     setDate(e.target.value)

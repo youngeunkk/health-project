@@ -20,17 +20,17 @@ function Home() {
     return (
         <div className="home">
             <h1>POWER AND BUILDING</h1>
-            <h2>강력하고 건강하게!</h2>
-            <p> 웨이트 트레이닝에서 가장 중요한 3대 운동(스쿼트, 벤치프레스, 데드리프트)을 통해
-                몸을 보다 더 강력하고 건강하게 가꾸어 나가고 수치 변화를 매번 기록하고 피드백하며
-                보다 더 빠르게 성장하는 것을 목표로 합니다.
+            <h2>강력하고 완벽하게!</h2>
+            <p> 우리 사이트는 웨이트 트레이닝에서 가장 중요한 
+                3대 운동(스쿼트, 벤치프레스, 데드리프트)을 점진적으로
+                강력하고 완벽하게 성장하는 것을 목표로 합니다.
             </p>
             <div className="btnarea">
                 <button id="mypagebtn" onClick={() => {
                     navigate('/mypage');
                 }}>My Page</button>
                 <button id="loginbtn" onClick={() => {
-                    navigate('/login');
+                    navigate('/sineup');
                 }}>LOG IN</button>
             </div>
             <div className="images">

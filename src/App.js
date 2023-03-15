@@ -10,6 +10,7 @@ import { addBench } from './Slice/benchSlice';
 import { addDeadlift } from './Slice/deadliftSlice';
 import { Routes, Route, useNavigate} from 'react-router-dom';
 import Home from './Mode/Home';
+import SineUp from './Mode/SignUp';
 
 
 function App() {
@@ -56,6 +57,7 @@ function App() {
         <Route path="/recode" element={<Recode onChangeMyPageMode={onChangeMyPageMode}/>}/>
         <Route path="/update/:id" element={<Update onChangeMyPageMode={onChangeMyPageMode}/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path="/sineup" element={<SineUp/>}/>
       </Routes>
     </div>
   );
