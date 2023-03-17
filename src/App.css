@@ -324,35 +324,46 @@ footer {
 }
 
 .sineup h1 {
-  color: lavender;
-  margin-top: 50px;
+  color: black;
+  margin-top: 60px;
   text-align: center;
 }
 
 .sineup form {
-  border: 4px solid lavender;
-  width: 600px;
-  height: 600px;
+  background-color: white;
+  border: 10px double black;
+  width: 560px;
+  height: 560px;
 }
 
 .input-wrapper {
-  color: lavenderblush;
-  font-size: 22px;
+  color: black;
+  font-size: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin-bottom: 30px;
+  margin-top: 40px;
 }
 
 .input-wrapper input {
-  background-color: lavender;
-  border: 3px solid black;
-  width: 300px;
+  caret-color: black;
+  margin-top: 10px;
+  background-color: white;
+  border: none;
+  border-bottom: 3px dotted black;
+  color: black;
+  font-size: 20px;
+  width: 330px;
+}
+
+.input-wrapper input:focus {
+  outline: none;
 }
 
 .submit-wrapper {
-  margin-top: 60px;
+  margin-top: 25px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -361,12 +372,13 @@ footer {
 
 .submit-wrapper button {
   font-size: 18px;
-  color: black;
+  color: white;
   font-weight: bold;
-  background-color: lavender;
-  border: 2px solid black;
-  width: 200px;
-  height: 50px;
+  background-color: black;
+  border: 5px double white;
+  border-radius: 5%;
+  width: 150px;
+  height: 75px;
 }
 
 .submit-wrapper button:hover {

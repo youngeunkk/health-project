@@ -1,17 +1,19 @@
 import { useState } from "react"
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { CreateUser} from "../Slice/userSlice";
 
 function SineUp() {
 
-    const [mail, setMail] = useState();
-    const [name, setName] = useState();
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const [nickname, setNickname] = useState();
     const [id, setId] = useState();
     const [pw, setPw] = useState();
 
-    const handleMailChange = (e) => {
-        setMail(e.target.value);
-    }
-    const handleNameChange = (e) => {
-        setName(e.target.value);
+    const handleNicknameChange = (e) => {
+        setNickname(e.target.value);
     }
     const handleIdChange = (e) => {
         setId(e.target.value);
@@ -19,35 +21,51 @@ function SineUp() {
     const handlePwChange = (e) => {
         setPw(e.target.value);
     }
+    const onSubmit = (e) => {
+        if (nickname.length < 1) {
+            e.preventDefault();
+            alert('닉네임은 2글자 이상 입력하셔야 합니다!');
+        } else if (id.length < 4)  {
+            e.preventDefault();
+            alert('ID를 4글자에서 8글자 사이로 입력해주세요!');
+        } else if (pw.length < 4) {
+            e.preventDefault();
+            alert('비밀번호를 4글자에서 8글자 사이로 입력해주세요!');
+        } else {
+            e.preventDefault();
+            let data = {
+                name: nickname,
+                id: id,
+                pw: pw
+            }
+            dispatch(CreateUser(data));
+            alert('회원가입이 완료되었습니다')
+            navigate('/')
+        }
+    }
 
     return (
         <div className="sineup">
-            <form>
+            <form onSubmit={onSubmit}>
                 <div>
                     <h1>회원가입</h1>
                 </div>
                 <div className="input-wrapper">
                     <label>
-                        E-mail<br></br>
-                        <input type="text" value={mail} onChange={handleMailChange} />
+                        닉네임을 입력해주세요!<br></br>
+                        <input type="text" name="nickname" onChange={handleNicknameChange} />
                     </label>
                 </div>
                 <div className="input-wrapper">
                     <label>
-                        Name<br></br>
-                        <input type="text" value={name} onChange={handleNameChange} />
+                        아이디를 입력해주세요! (4-8자리 글자)<br></br>
+                        <input type="text" maxLength='8' name="id" onChange={handleIdChange} />
                     </label>
                 </div>
                 <div className="input-wrapper">
                     <label>
-                        ID<br></br>
-                        <input type="text" value={id} onChange={handleIdChange} />
-                    </label>
-                </div>
-                <div className="input-wrapper">
-                    <label>
-                        Password<br></br>
-                        <input type="text" value={pw} onChange={handlePwChange} />
+                        비밀번호를 입력해주세요 (4-12 글자)<br></br>
+                        <input type="password" maxLength='12' name="password" onChange={handlePwChange} />
                     </label>
                 </div>
                 <div className="submit-wrapper">

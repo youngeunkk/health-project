@@ -9,9 +9,6 @@ function Card() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-
-    console.log(recode);
-
     return (
         <div className="read">
             <h2>운동일지🏃‍♀️</h2>
