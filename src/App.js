@@ -9,7 +9,6 @@ import { addSquat } from './Slice/squatSlice';
 import { addBench } from './Slice/benchSlice';
 import { addDeadlift } from './Slice/deadliftSlice';
 import { Routes, Route, useNavigate} from 'react-router-dom';
-import Home from './Mode/Home';
 import SineUp from './Mode/SignUp';
 
 
@@ -19,7 +18,7 @@ function App() {
   const navigate = useNavigate();
 
   const onChangeMyPageMode = () => {
-    navigate('/mypage');
+    navigate('/');
   }
 
   const onChangeNewPRMode = () => {
@@ -48,11 +47,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/mypage" element={
+        <Route path="/" element={
           <MyPage onChangeNewPRMode={onChangeNewPRMode} 
                   onChangeRecodeMode={onChangeRecodeMode}
                 />}/>
-        <Route path="/" element={<Home/>}/>
         <Route path="/NewPR" element={<NewPR onCreatePR={onCreatePR}/>}/>
         <Route path="/recode" element={<Recode onChangeMyPageMode={onChangeMyPageMode}/>}/>
         <Route path="/update/:id" element={<Update onChangeMyPageMode={onChangeMyPageMode}/>}/>

@@ -17,11 +17,12 @@ body {
 }
 
 #squat {
-  margin-left: 38px;
+  margin-left: 55px;
 }
 
 .freeweightBox {
-  background-color: rgba(128, 128, 128, 0.5);
+  color: black;
+  background-color: white;
   width: 480px;
   height: 480px;
   font-weight: bold;
@@ -29,6 +30,17 @@ body {
   text-align: center;
   border-radius: 10%;
   margin-top: 12%;
+}
+
+.freeweightBox input {
+  font-size: 18px;
+  margin-left: 15px;
+  border: none;
+  border-bottom: 3px solid black;
+}
+
+.freeweightBox input:focus {
+  outline: none;
 }
 
 .freeweightBox h1 {
@@ -50,8 +62,8 @@ body {
   margin-top: 25px;
   margin-left: 5px;
   background-color: black;
-  border: 1px solid white;
   color: white;
+  border: 2px double white;
   width: 90px;
   height: 90px;
   border-radius: 50%;
@@ -61,8 +73,7 @@ body {
 
 #sbd:hover {
   cursor: pointer;
-  background-color:rgba(0, 0, 0, 0.5);
-  border: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.829);
 }
 
 
@@ -156,15 +167,14 @@ textarea {
   height: 400px;
   overflow: hidden;
   resize: none;
-  border: 2px solid white;
-  background-color:rgba(0, 0, 0, 0.888);
-  color: white;
+  border: 5px double black;
+  color: black;
   font-size: 20px;
 }
 
 textarea::placeholder {
-  color : white;
-  font-size : 18px;
+  color : rgb(88, 88, 88);
+  font-size : 15px;
 }
 
 .recodearea {
@@ -174,29 +184,24 @@ textarea::placeholder {
 }
 
 .read {
-  position: absolute;
+  position: relative;
   width: 100%;
-  margin-top: 450px;
-  justify-content: center;
+  margin-top: 35%;
 }
 
 .read h2 {
   text-align: center;
 }
-
 .card {
-  width: 360px;
-  height: 360px;
+  position: relative;
+  width: 480px;
+  height: 480px;
   float: left;
   margin-top: 100px;
-  margin-left: 10px;
-  margin-right: 10px;
-  border: 2px solid white;
+  margin-left: 2%;
+  margin-right: 5%;
+  border: 7px double white;
   white-space: pre-wrap;
-}
-
-.card h4, p {
-  margin-left: 5px;
 }
 
 .deleteArea {
@@ -205,61 +210,76 @@ textarea::placeholder {
 }
 
 #delete {
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   margin-right: 10px;
   float: right;
-  background-color: darkkhaki;
-  border: darkkhaki;
-  color: white;
-  font-size: 15px;
+  background-color: white;
+  border: 3px solid black;
+  font-weight: bold;
+  font-size: 18px;
   width: 60px;
 }
 
 #delete:hover {
   cursor: pointer;
-  color:black;
-  background-color:violet;
-  border: violet;
+  color:white;
+  background-color:black;
 }
 
 #update {
+  margin-left: 2px;
   margin-bottom: 5px;
   margin-right: 10px;
   float: right;
-  background-color: darkkhaki;
-  border: darkkhaki;
-  color: white;
-  font-size: 15px;
+  background-color: white;
+  border: 3px solid black;
+  font-weight: bold;
+  font-size: 18px;
   width: 60px;
 }
 
 #update:hover {
   cursor: pointer;
-  color:black;
-  background-color:violet;
-  border: violet;
+  color:white;
+  background-color:black;
 }
 
 #save {
-  background-color: black;
-  border: black;
-  color: white;
+  background-color: rgb(218, 218, 218);
+  color: black;
   font-size: 18px;
   width: 70px;
   height: 70px;
-  border: 2px solid white;
+  border: 3px solid black;
   border-radius: 100%;
+  font-weight: bold;
 }
 
 #save:hover {
   cursor: pointer;
-  color:black;
-  background-color: lightgreen;
-  border : lightgreen;
+  color:white;
+  background-color: black;
 }
 
 .home {
-  text-align: center;
+  height: 100vh;
+}
+
+#update-submit-btn {
+  background-color: rgb(218, 218, 218);
+  color: black;
+  font-size: 18px;
+  width: 70px;
+  height: 70px;
+  border: 3px solid black;
+  border-radius: 100%;
+  font-weight: bold;
+}
+
+#update-submit-btn:hover {
+  cursor: pointer;
+  color:white;
+  background-color: black;
 }
 
 
@@ -384,4 +404,5 @@ footer {
 .submit-wrapper button:hover {
   cursor: pointer;
 }
+
 

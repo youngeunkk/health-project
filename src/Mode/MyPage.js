@@ -1,8 +1,19 @@
 import { useSelector } from 'react-redux';
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from 'recharts';
+import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip } from 'recharts';
 import Card from './Card';
 
 function MyPage(props) {
+
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip">
+          <p>{`${payload[0].value}`}</p>
+        </div>
+      );
+    }
+    return null;
+  };
 
 
   const squatData = useSelector(state => {
@@ -21,6 +32,7 @@ function MyPage(props) {
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />
       <YAxis />
+      <Tooltip content={<CustomTooltip/>}/>
     </LineChart>
   );
 
@@ -30,6 +42,7 @@ function MyPage(props) {
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />
       <YAxis />
+      <Tooltip content={<CustomTooltip/>}/>
     </LineChart>
   );
 
@@ -39,6 +52,7 @@ function MyPage(props) {
       <CartesianGrid stroke="#ccc" />
       <XAxis dataKey="date" />
       <YAxis />
+      <Tooltip content={<CustomTooltip/>}/>
     </LineChart>
   );
 
@@ -52,10 +66,10 @@ function MyPage(props) {
   return (
     <div className="home">
       <div className="homeMode">
-        <h2>OOO 회원님, 반갑습니다 !</h2>
+        <h2>xpkye 회원님, 반갑습니다 !</h2>
         <ul>
           <li>스쿼트 :{newSquat.uv}</li>
-          <li>벤치프레스 :{newBench.uv} </li>
+          <li>벤치프레스 : {newBench.uv} </li>
           <li>데드리프트 : {newDead.uv}</li>
           <li>3대 중량 : {sum}</li>
         </ul>

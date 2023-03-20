@@ -30,13 +30,13 @@ function Update(props) {
                 body: body
             }
             dispatch(UpdateRecode(data));
-            alert('글이 작성되었습니다');
+            alert('글이 수정되었습니다');
             props.onChangeMyPageMode();
         }
     };
 
     return (
-        <div className="recodeArea">
+        <div className="recodearea">
             <form onSubmit={onUpdate}>
                 <p><input type="date" name="date" id="date" value={date} onChange={(e)=>{
                     setDate(e.target.value)
@@ -44,7 +44,7 @@ function Update(props) {
                 <p><textarea name="body" id="textarea" value={body} cols="80" row="40" maxLength="300" placeholder="운동일지를 적어주세용" onChange={(e)=>{
                     setBody(e.target.value)
                 }}></textarea></p>
-                <button type="submit">저장</button>
+                <button type="submit" id="update-submit-btn">저장</button>
             </form>
         </div>
     )
