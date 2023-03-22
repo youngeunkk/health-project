@@ -1,4 +1,4 @@
-# **3대 500을 위하여**
+# **3대 500을 위하여🚀**
 
 🏋️‍♂️ 3대 운동(squat, benchpress, deadlift)의 훈련일지를 기록하고 차트로 수치화 하는 웹 애플리케이션입니다 !
 
@@ -10,7 +10,7 @@
  올바른 운동 방향을 잡을 수 있는 웹 애플리케이션을 만들게 되었습니다.    
 
 ## **📑주요 기능**
-* react-Router
+* [react-Router](https://github.com/youngeunkk/health-project/wiki/react-Router)
 * CRUD
 * redux toolkit을 활용한 상태 관리
 * redux-persist으로 store 유지
@@ -32,7 +32,7 @@ npm start
 * 새로고침 했을 때도 데이터가 유지되지 못함   
   -> react-persist으로 store 유지
   
- ## **❕느낀 점**
+ ## **💸느낀 점**
    
       
   계획 없이 그저 머릿속으로만 상상한 것들을 바로 프로젝트로 만들려고 하니깐 여러가지 이슈가 발생했습니다.   
