@@ -10,39 +10,52 @@
  올바른 운동 방향을 잡을 수 있는 웹 애플리케이션을 만들게 되었습니다.    
 
 ## **📑주요 기능**
-* 중량 설정하면 날짜 별 차트화 및 상단 가운데에 최고 중량 표시   
 
-  ![Home](https://user-images.githubusercontent.com/101387557/226828339-555d8d97-b1a8-49b3-87b2-3e47d9e4b422.png)   
+* **중량 설정**
+  * 새 중량 갱신하기 버튼 클릭 시 아래 화면으로 이동   
 
-   
+  ![중량설정1](https://user-images.githubusercontent.com/101387557/227459433-a139b65d-a20f-4868-93e0-24ca49eb0d2e.png)
 
-* Create   
+  * 중량 설정 완료하면 Home에서 차트로 날짜 별 중량 확인 가능   
+  
+  ![중량설정2](https://user-images.githubusercontent.com/101387557/227459451-e1b8a467-1bd1-49ef-abdc-9931f39e7ea1.png)
+
+* **Create**
+  * 훈련일지 작성 (선택한 날짜와 함께 저장)  
   
   ![Create](https://user-images.githubusercontent.com/101387557/227442552-7d99434b-7dc3-43fb-bc3c-2a3b50427851.gif)   
 
 
 
-* Read   
+* **Read**
+  * 저장한 훈련일지가 카드 형식으로 Home에서 확인 가능  
   
   ![Read](https://user-images.githubusercontent.com/101387557/227443867-25742f19-c93f-4382-ace1-08a2b22c931c.png)  
 
 
-* Update   
+* **Update**
+  * 카드 안에 수정 버튼 누르게 되면 훈련일지(recode)의 id와 일치하는 훈련일지를 불러와서 수정 가능
 
   ![Update](https://user-images.githubusercontent.com/101387557/227446209-56c61577-6d21-402d-964d-35de4c497baf.gif)   
 
 
 
-* Delete   
+* **Delete**
+  * id와 일치하는 훈련일지 삭제 가능
 
-
-  ![Delete](https://user-images.githubusercontent.com/101387557/227443062-f610ed87-45e9-4afd-b207-1f05f3ad22c5.gif)   
+  ![Delete](https://user-images.githubusercontent.com/101387557/227443062-f610ed87-45e9-4afd-b207-1f05f3ad22c5.gif)
+   
 
 
 
 * [react Router로 페이지 렌더링](https://github.com/youngeunkk/health-project/wiki/react-Router)   
 
-* redux-persist로 redux 상태값 유지 
+
+   
+
+
+
+* [redux-persist로 redux 상태값 유지](https://github.com/youngeunkk/health-project/wiki/redux-persist)
 
 
 ## **💻실행**
