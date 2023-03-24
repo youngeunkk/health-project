@@ -12,7 +12,7 @@
 ## **📑주요 기능**
 * 중량 설정하면 날짜 별 차트화 및 상단 가운데에 최고 중량 표시   
 
-![Home](https://user-images.githubusercontent.com/101387557/226828339-555d8d97-b1a8-49b3-87b2-3e47d9e4b422.png)   
+  ![Home](https://user-images.githubusercontent.com/101387557/226828339-555d8d97-b1a8-49b3-87b2-3e47d9e4b422.png)   
 
    
 
@@ -36,9 +36,13 @@
 * Delete   
 
 
-  ![Delete](https://user-images.githubusercontent.com/101387557/227443062-f610ed87-45e9-4afd-b207-1f05f3ad22c5.gif)
+  ![Delete](https://user-images.githubusercontent.com/101387557/227443062-f610ed87-45e9-4afd-b207-1f05f3ad22c5.gif)   
 
 
+
+* [react Router로 페이지 렌더링](https://github.com/youngeunkk/health-project/wiki/react-Router)   
+
+* redux-persist로 redux 상태값 유지 
 
 
 ## **💻실행**
