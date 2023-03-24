@@ -10,7 +10,19 @@
  올바른 운동 방향을 잡을 수 있는 웹 애플리케이션을 만들게 되었습니다.    
 
 ## **📑주요 기능**
-![Home](https://user-images.githubusercontent.com/101387557/226828339-555d8d97-b1a8-49b3-87b2-3e47d9e4b422.png)
+* 중량 설정하면 날짜 별 차트화 및 상단 가운데에 최고 중량 표시
+![Home](https://user-images.githubusercontent.com/101387557/226828339-555d8d97-b1a8-49b3-87b2-3e47d9e4b422.png)   
+   
+
+* Create
+  ![Create](https://user-images.githubusercontent.com/101387557/227442552-7d99434b-7dc3-43fb-bc3c-2a3b50427851.gif)   
+
+* Read
+  ![Read](https://user-images.githubusercontent.com/101387557/227443867-25742f19-c93f-4382-ace1-08a2b22c931c.png)   
+
+
+* Delete
+  ![Delete](https://user-images.githubusercontent.com/101387557/227443062-f610ed87-45e9-4afd-b207-1f05f3ad22c5.gif)
 
 
 
