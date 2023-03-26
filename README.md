@@ -16,7 +16,8 @@
 
   ![중량설정1](https://user-images.githubusercontent.com/101387557/227459433-a139b65d-a20f-4868-93e0-24ca49eb0d2e.png)
 
-  * 중량 설정 완료하면 Home에서 차트로 날짜 별 중량 확인 가능   
+  * 중량 설정 완료하면 Home에서 차트로 날짜 별 중량 확인 가능 
+    * [Chart 구현](https://github.com/youngeunkk/health-project/wiki/Chart)  
   
   ![중량설정2](https://user-images.githubusercontent.com/101387557/227459451-e1b8a467-1bd1-49ef-abdc-9931f39e7ea1.png)
 
