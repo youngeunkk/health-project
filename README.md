@@ -84,7 +84,7 @@ npm start
   * 체중 대비 최고 중량을 함께 볼 수 있게 하기 위함
   * 다이어트 효과나 벌크업 효과도 확인하기 위함
 
-## **🌎SKILLS**
+## **🌎Skills**
 <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white">
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">
